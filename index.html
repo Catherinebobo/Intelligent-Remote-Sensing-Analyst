@@ -196,6 +196,7 @@ figcaption .key.c{box-shadow:inset 0 -0.55em 0 var(--claw-tint)}
 
 /* ---------- cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+.cards.two{grid-template-columns:repeat(2,1fr)}
 .card{
   border:1px solid var(--line);border-radius:12px;padding:25px 24px;background:var(--paper);
   transition:transform .25s,box-shadow .25s,border-color .25s;
@@ -293,6 +294,7 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
       <a href="#agent">RingMo-Agent</a>
       <a href="#claw">RingMo-Claw</a>
       <a href="#demo">Demo</a>
+      <a href="#applications">Applications</a>
       <a href="#papers">Papers</a>
     </div>
   </nav>
@@ -500,7 +502,7 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 </section>
 
 <!-- ================= DEMO ================= -->
-<section id="demo" class="tint">
+<section id="demo">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker c">Demo</span>
@@ -513,6 +515,40 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
       </video>
     </div>
     <p class="vnote">Plays <code>assets/demo.mp4</code>. Replace it with a compressed copy before publishing the page online &mdash; the raw recording is heavy over a network.</p>
+  </div>
+</section>
+
+<!-- ================= APPLICATIONS ================= -->
+<section id="applications" class="tint">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Applications</span>
+      <h2>Where this goes</h2>
+      <p class="sec-sub">The value is less in any single capability than in connecting perception, reasoning, execution and refinement into one chain.</p>
+    </div>
+
+    <div class="cards two rv" style="margin-bottom:0">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Unified interpretation of multi-source imagery</h3>
+        <p>Description, classification, question answering and detection on the same scene, whether it arrives as optical, SAR or infrared &mdash; no switching models between sensors, and no pipeline to manage around them.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Multi-step analysis you can check</h3>
+        <p>A plain-language instruction is broken into region localisation, object recognition, relation judgement and summary. Every step leaves an intermediate result an analyst can inspect &mdash; and a failure can be traced to perception, reasoning or execution.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Environment understanding for unmanned systems</h3>
+        <p>From imagery, target position and starting pose to three-dimensional waypoints and step-by-step manoeuvres, connecting what the system sees to what it does next: route planning, target approach, semantic navigation.</p>
+      </div>
+      <div class="card c">
+        <span class="num">04</span>
+        <h3>A research assistant for remote sensing</h3>
+        <p>Repetitive data preparation, experiment runs, result diagnosis and record-keeping handled by the framework, so researchers spend their time on the method rather than the plumbing around it.</p>
+      </div>
+    </div>
   </div>
 </section>
 
