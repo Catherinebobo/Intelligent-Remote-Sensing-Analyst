@@ -258,6 +258,7 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 
 /* ---------- responsive ---------- */
 @media (max-width:940px){
+  .ladder{grid-template-columns:1fr}
   .pair{grid-template-columns:1fr;gap:16px}
   .joint{flex-direction:row;padding:2px 0;min-height:50px;gap:14px}
   .joint .line{width:auto;height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--line-2),transparent)}
@@ -296,6 +297,29 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 .lead-p{font-size:17px;line-height:1.75;color:var(--body);margin:0 0 26px}
 .lead-p:last-child{margin-bottom:0}
 .lead-p b{color:var(--ink);font-weight:600}
+
+/* ---------- six-verb ladder ---------- */
+.ladder{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:36px 0 40px}
+.rung{border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:26px 26px 22px;background:rgba(255,255,255,.035)}
+.rung-head{
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
+  margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.12);
+}
+.rung.a .rung-head{color:#5cc8f5}
+.rung.c .rung-head{color:#fbbf4a}
+.rung dl{margin:0;display:flex;flex-direction:column;gap:16px}
+.rung .row{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:baseline}
+.rung dt{font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.rung.a dt{color:#5cc8f5}
+.rung.c dt{color:#fbbf4a}
+.rung dd{margin:0;font-size:14.4px;line-height:1.6;color:rgba(255,255,255,.72)}
+
+/* ---------- bridge line ---------- */
+.bridge{
+  font-size:clamp(16px,1.9vw,19px);line-height:1.7;color:rgba(255,255,255,.82);
+  margin:0 0 34px;padding-left:22px;border-left:2px solid rgba(255,255,255,.22);
+}
+.bridge span{display:block}
 
 /* ---------- closing band ---------- */
 .closing{background:#061626;color:#fff;padding:96px 0;position:relative;overflow:hidden}
@@ -337,8 +361,8 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
       <a href="#shift">Overview</a>
       <a href="#agent">RingMo-Agent</a>
       <a href="#claw">RingMoClaw</a>
+      <a href="#experience">Experience</a>
       <a href="#demo">Demo</a>
-      <a href="#applications">Applications</a>
       <a href="#papers">Papers</a>
     </div>
   </nav>
@@ -541,8 +565,6 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 
     <p class="lead-p rv">On fine-grained object detection, the framework <b>picks its own direction</b> from whatever bottleneck the current round exposes &mdash; augmentation when the data is the limit, a loss or schedule change when training is, a new module when the architecture is. What improves is kept; what does not is recorded as a dead end and avoided later. The route is not a fixed recipe, it forms as the problems surface.</p>
 
-    <p class="pull c rv">A failed experiment stops being a failure. It becomes <i>the input to the next decision.</i></p>
-
     <div class="cards rv" style="margin-bottom:0">
       <div class="card c">
         <span class="num">01</span>
@@ -563,8 +585,25 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
   </div>
 </section>
 
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="tint">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker c">Experience</span>
+      <h2>Not just finishing the task &mdash; keeping what it learned</h2>
+      <p class="sec-sub">Most of the distance between one analyst and another comes down to experience. Having done something similar, you know which approach is likely to work. Having taken a wrong turn once, you know to avoid it next time.</p>
+    </div>
+
+    <p class="lead-p rv">RingMoClaw builds that in from two directions at once. <b>New knowledge comes in from the outside</b> &mdash; published papers, open-source implementations, methods worth borrowing. <b>Its own record goes the other way</b>: the paths that worked, the attempts that failed, and where performance actually got stuck.</p>
+
+    <p class="lead-p rv">So facing a new task, the framework does not start from zero. It consults what has already worked and what has already not, and narrows the search faster. That is the difference between a system that executes and one that accumulates &mdash; between a tool and a research agent that keeps getting better at its job.</p>
+
+    <p class="pull c rv" style="margin-bottom:0">A failed experiment stops being a failure. It becomes <i>the input to the next decision.</i></p>
+  </div>
+</section>
+
 <!-- ================= DEMO ================= -->
-<section id="demo" class="tint">
+<section id="demo">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker c">Demo</span>
@@ -580,52 +619,44 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
   </div>
 </section>
 
-<!-- ================= APPLICATIONS ================= -->
-<section id="applications">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="kicker">Applications</span>
-      <h2>Where this goes</h2>
-      <p class="sec-sub">The value is less in any single capability than in connecting perception, reasoning, execution and refinement into one chain.</p>
-    </div>
-
-    <div class="cards two rv" style="margin-bottom:0">
-      <div class="card">
-        <span class="num">01</span>
-        <h3>Unified interpretation of multi-source imagery</h3>
-        <p>Description, classification, question answering and detection on the same scene, whether it arrives as optical, SAR or infrared &mdash; no switching models between sensors, and no pipeline to manage around them.</p>
-      </div>
-      <div class="card">
-        <span class="num">02</span>
-        <h3>Multi-step analysis you can check</h3>
-        <p>A plain-language instruction is broken into region localisation, object recognition, relation judgement and summary. Every step leaves an intermediate result an analyst can inspect &mdash; and a failure can be traced to perception, reasoning or execution.</p>
-      </div>
-      <div class="card">
-        <span class="num">03</span>
-        <h3>Environment understanding for unmanned systems</h3>
-        <p>From imagery, target position and starting pose to three-dimensional waypoints and step-by-step manoeuvres, connecting what the system sees to what it does next: route planning, target approach, semantic navigation.</p>
-      </div>
-      <div class="card c">
-        <span class="num">04</span>
-        <h3>A research assistant for remote sensing</h3>
-        <p>Repetitive data preparation, experiment runs, result diagnosis and record-keeping handled by the framework, so researchers spend their time on the method rather than the plumbing around it.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= CLOSING ================= -->
 <div class="closing">
   <div class="wrap">
     <span class="kicker rv">Together</span>
     <h2 class="rv">Two works, one analyst</h2>
-    <p class="rv">If RingMo-Agent gives remote sensing AI the ability to <b>complete a task</b>, RingMoClaw gives it the ability to <b>get better at completing tasks</b>. What comes next may not be a foundation model with ever more parameters, but something closer to an analyst that stays on the job &mdash; one you can work with, check, and watch improve.</p>
+    <p class="rv">If RingMo-Agent gives remote sensing AI the ability to <b>complete a task</b>, RingMoClaw gives it the ability to <b>get better at completing tasks</b>. Six abilities, split across the two works:</p>
+
+    <div class="ladder rv">
+      <div class="rung a">
+        <div class="rung-head">RingMo-Agent</div>
+        <dl>
+          <div class="row"><dt>See</dt><dd>Read multi-platform, multi-modal remote sensing data</dd></div>
+          <div class="row"><dt>Think</dt><dd>Analyse how targets relate; make sense of a complex task</dd></div>
+          <div class="row"><dt>Act</dt><dd>Call tools on its own, decide, and plan what happens next</dd></div>
+        </dl>
+      </div>
+      <div class="rung c">
+        <div class="rung-head">RingMoClaw</div>
+        <dl>
+          <div class="row"><dt>Reflect</dt><dd>Find the errors, and the bottleneck actually holding performance back</dd></div>
+          <div class="row"><dt>Learn</dt><dd>Draw on outside knowledge and on its own history to find a new route</dd></div>
+          <div class="row"><dt>Evolve</dt><dd>Turn every task into experience for the task after it</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <p class="bridge rv">
+      <span>From perception to cognition, from cognition to action.</span>
+      <span>From carrying out a task to reflecting on it &mdash; and from reflection to evolving on its own.</span>
+    </p>
+
+    <p class="rv">What comes next may not be a foundation model with ever more parameters. It may look more like an analyst who stays on the job &mdash; one you can work with, check, and watch improve.</p>
     <p class="punch rv">We used to hand the model an image. Before long, we may only need to hand the agent <em>a task</em>.</p>
   </div>
 </div>
 
 <!-- ================= PAPERS ================= -->
-<section id="papers" class="tint">
+<section id="papers">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker">Resources</span>
