@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RingMo-Agent &amp; RingMo-Claw</title>
-<meta name="description" content="From a unified multi-platform, multi-modal remote sensing foundation model to a self-evolving multi-agent research framework.">
+<title>Intelligent Remote Sensing Analyst</title>
+<meta name="description" content="RingMo-Agent and RingMoClaw: remote sensing AI that thinks, acts and evolves — from a unified multi-platform perception model to a self-evolving multi-agent research framework.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%230284c7' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23c2740a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,7 +93,7 @@ header.scrolled .navtoggle{border-color:var(--line-2);color:var(--body)}
 .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#38bdf8;box-shadow:0 0 12px #38bdf8}
 h1.title{
   font-size:clamp(36px,5.8vw,68px);line-height:1.05;letter-spacing:-.035em;margin:0 0 26px;
-  font-weight:700;max-width:17ch;color:#fff;
+  font-weight:700;max-width:22ch;color:#fff;
 }
 h1.title .g1{color:#5cc8f5}
 h1.title .g2{color:#fbbf4a}
@@ -281,8 +281,52 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
   .paper{padding:24px 22px}
   .abstract{padding-left:18px}
 }
+
+/* ---------- pull quote ---------- */
+.pull{
+  border-left:3px solid var(--agent);padding:4px 0 4px 26px;margin:0 0 44px;
+  font-size:clamp(19px,2.3vw,25px);line-height:1.42;letter-spacing:-.018em;
+  color:var(--ink);font-weight:600;text-wrap:balance;
+}
+.pull i{font-style:italic;font-weight:500;color:var(--agent)}
+.pull.c{border-left-color:var(--claw)}
+.pull.c i{color:var(--claw)}
+
+/* ---------- lead paragraph inside a section ---------- */
+.lead-p{font-size:17px;line-height:1.75;color:var(--body);margin:0 0 26px}
+.lead-p:last-child{margin-bottom:0}
+.lead-p b{color:var(--ink);font-weight:600}
+
+/* ---------- closing band ---------- */
+.closing{background:#061626;color:#fff;padding:96px 0;position:relative;overflow:hidden}
+.closing::before{
+  content:'';position:absolute;inset:auto -10% -40%;height:560px;
+  background:radial-gradient(50% 60% at 30% 60%, rgba(56,189,248,.18), transparent 70%),
+             radial-gradient(44% 54% at 74% 40%, rgba(245,165,36,.14), transparent 70%);
+  pointer-events:none;
+}
+.closing .wrap{position:relative;z-index:2}
+.closing .kicker{color:#5cc8f5}
+.closing h2{color:#fff}
+.closing p{color:rgba(255,255,255,.76);font-size:17px;line-height:1.75;margin:0 0 30px}
+.closing p b{color:#fff;font-weight:600}
+.closing .punch{
+  font-size:clamp(21px,2.9vw,32px);line-height:1.34;letter-spacing:-.025em;
+  color:#fff;font-weight:600;margin:0;padding-top:30px;
+  border-top:1px solid rgba(255,255,255,.16);text-wrap:balance;
+}
+.closing .punch em{font-style:normal;color:#fbbf4a}
+
+/* ---------- three-up identity strip ---------- */
+.verbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.verb{
+  font-size:12px;letter-spacing:.06em;font-weight:600;padding:5px 12px;border-radius:100px;
+  background:var(--agent-tint);color:var(--agent);
+}
+.pcard.c .verb{background:var(--claw-tint);color:var(--claw)}
 </style>
 </head>
+
 <body>
 
 <header id="hdr">
@@ -290,9 +334,9 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
     <a class="brand" href="#top"><span class="dot"></span>RingMo</a>
     <button class="navtoggle" id="navtoggle" aria-label="Menu">Menu</button>
     <div class="navlinks" id="navlinks">
-      <a href="#overview">Overview</a>
+      <a href="#shift">Overview</a>
       <a href="#agent">RingMo-Agent</a>
-      <a href="#claw">RingMo-Claw</a>
+      <a href="#claw">RingMoClaw</a>
       <a href="#demo">Demo</a>
       <a href="#applications">Applications</a>
       <a href="#papers">Papers</a>
@@ -303,37 +347,40 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 <!-- ================= HERO ================= -->
 <div class="hero" id="top">
   <div class="wrap">
-    <span class="eyebrow">Remote Sensing Foundation Models &amp; Agents</span>
-    <h1 class="title">From a unified <span class="g1">perception model</span> to a <span class="g2">self-evolving researcher</span>.</h1>
-    <p class="lede">Two works, one trajectory. <strong>RingMo-Agent</strong> unifies perception and reasoning across satellite and UAV platforms and optical, SAR and infrared modalities in a single model. <strong>RingMo-Claw</strong> takes the next step &mdash; a multi-agent framework that plans, runs and critiques remote sensing research on its own, accumulating experience as it goes.</p>
+    <span class="eyebrow">Thinks &middot; Acts &middot; Evolves</span>
+    <h1 class="title">Intelligent Remote Sensing <span class="g1">Analyst</span></h1>
+    <p class="lede">For years the goal was a model that could read a single image. What the work actually asks for is closer to a trained analyst &mdash; one that understands the task, reasons across optical, SAR and infrared imagery from satellites and UAVs, calls the tools it needs, and gets better every time it gets something wrong. Two connected efforts: <strong>RingMo-Agent</strong> builds the ability to see, reason and act; <strong>RingMoClaw</strong> adds the ability to reflect, learn and improve.</p>
     <div class="cta">
-      <a class="btn primary" href="#agent">Explore RingMo-Agent</a>
-      <a class="btn claw" href="#claw">Explore RingMo-Claw</a>
+      <a class="btn primary" href="#agent">RingMo-Agent</a>
+      <a class="btn claw" href="#claw">RingMoClaw</a>
       <a class="btn" href="#papers">Papers &amp; BibTeX</a>
     </div>
   </div>
 </div>
 
-<!-- ================= OVERVIEW ================= -->
-<section id="overview">
+<!-- ================= THE SHIFT ================= -->
+<section id="shift">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">Overview</span>
-      <h2>Two layers of the same stack</h2>
-      <p class="sec-sub">RingMo-Agent is the model that sees and reasons about the Earth. RingMo-Claw is the system that uses models like it to do research &mdash; and gets better at it every cycle.</p>
+      <span class="kicker">The shift</span>
+      <h2>From one model per task to one analyst</h2>
+      <p class="sec-sub">Conventional interpretation runs on one task, one model: a detector for detection, a classifier for classification, another algorithm again for question answering, relation analysis or planning. Faced with a real task, a person still has to hold all of it together.</p>
     </div>
+
+    <p class="lead-p rv">A trained analyst does not work that way. Handed <b>&ldquo;find the key targets, work out how they relate, and propose a follow-up check&rdquo;</b>, they read the task first, then locate, then judge, then decide what happens next. Closing that loop &mdash; turning scattered capabilities into one chain a system can carry end to end &mdash; is what these two works are for.</p>
 
     <div class="pair rv">
       <div class="pcard a">
-        <div class="role">Foundation layer</div>
+        <div class="role">Paper 01 &mdash; IEEE TPAMI 2026</div>
         <h3>RingMo-Agent</h3>
-        <p>A single vision-language model that handles imagery from different sensors and different viewpoints, and answers both perception and reasoning instructions.</p>
+        <p>One model that reads imagery from different sensors and different viewpoints, reasons about what it sees, and acts on the result.</p>
         <ul>
           <li>Satellite and UAV platforms</li>
           <li>Optical, SAR and infrared modalities</li>
           <li>Captioning, VQA, classification, detection</li>
           <li>Relation reasoning, instruction decomposition, task scheduling, action decision</li>
         </ul>
+        <div class="verbs"><span class="verb">Sees</span><span class="verb">Reasons</span><span class="verb">Acts</span></div>
       </div>
       <div class="joint">
         <div class="line"></div>
@@ -341,15 +388,16 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
         <div class="line"></div>
       </div>
       <div class="pcard c">
-        <div class="role">Research layer</div>
-        <h3>RingMo-Claw</h3>
-        <p>A team of agents that takes a research task described in plain language and carries it through from idea to trained model.</p>
+        <div class="role">Paper 02 &mdash; preprint</div>
+        <h3>RingMoClaw</h3>
+        <p>A team of agents that takes a research task described in plain language and carries it through &mdash; then learns from how it went.</p>
         <ul>
           <li>Turns a one-sentence goal into a concrete study</li>
           <li>Prepares the data and runs the experiments</li>
-          <li>Reviews its own plan, data and results</li>
+          <li>An independent critic reviews plan, data and results</li>
           <li>Carries experience forward from one run to the next</li>
         </ul>
+        <div class="verbs"><span class="verb">Reflects</span><span class="verb">Learns</span><span class="verb">Evolves</span></div>
       </div>
     </div>
   </div>
@@ -361,7 +409,7 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
     <div class="sec-head rv">
       <span class="kicker">Paper 01</span>
       <h2>RingMo-Agent</h2>
-      <p class="sec-sub">A unified remote sensing foundation model for multi-platform and multi-modal reasoning.</p>
+      <p class="sec-sub">Not just seeing &mdash; understanding, and acting on what it sees.</p>
     </div>
 
     <div class="paper rv">
@@ -374,6 +422,10 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
       <div class="meta-row">
         <span class="tag live">IEEE TPAMI 2026</span>
         <span class="tag">arXiv:2507.20776</span>
+        <a class="btn sm" href="https://doi.org/10.1109/TPAMI.2026.3718699" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>
+          DOI
+        </a>
         <a class="btn sm" href="https://arxiv.org/abs/2507.20776" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>
           arXiv
@@ -385,6 +437,8 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
         <span class="btn sm ghost">Code &mdash; coming soon</span>
       </div>
     </div>
+
+    <p class="lead-p rv">Real remote sensing data arrives from different satellites, different aircraft and different sensors, and the gaps between them are wide. RingMo-Agent handles <b>two platforms and three modalities in a single model</b>, backed by RS-VL3M &mdash; over three million image&ndash;text pairs built for exactly this range.</p>
 
     <div class="abstract rv">
       <span class="lead">Abstract</span>
@@ -425,19 +479,21 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
     </div>
 
     <figure class="rv">
-      <div class="figbox" data-src="assets/agent-architecture.webp">
-        <span class="zoom">Click to zoom</span>
-        <img src="assets/agent-architecture.webp" alt="RingMo-Agent architecture" loading="lazy">
-      </div>
-      <figcaption><span class="lbl">Figure 2 &mdash; Architecture.</span> Each modality enters through <span class="key">its own embedding layer</span>, so optical, SAR and infrared imagery stay separate before meeting in the shared backbone. The language model then produces the answer &mdash; text for most tasks, a trajectory for spatial ones such as flight planning.</figcaption>
-    </figure>
-
-    <figure class="rv">
       <div class="figbox" data-src="assets/agent-tasks.webp">
         <span class="zoom">Click to zoom</span>
         <img src="assets/agent-tasks.webp" alt="The eight task types RingMo-Agent supports, with example dialogues" loading="lazy">
       </div>
-      <figcaption><span class="lbl">Figure 3 &mdash; What it can do.</span> Eight task types behind <span class="key">one instruction interface</span>, from captioning and detection through relation reasoning to multi-step flight planning. The tag on each panel says which modalities that task accepts &mdash; four of the eight run on optical, SAR and infrared alike.</figcaption>
+      <figcaption><span class="lbl">Figure 2 &mdash; What it can do.</span> Eight task types behind <span class="key">one instruction interface</span>, from captioning and detection through relation reasoning to multi-step flight planning. The tag on each panel says which modalities that task accepts &mdash; four of the eight run on optical, SAR and infrared alike.</figcaption>
+    </figure>
+
+    <p class="pull rv">The question moves from <i>what is in this image?</i> to <i>how do these targets relate, how should this task be done, and what happens next?</i></p>
+
+    <figure class="rv">
+      <div class="figbox" data-src="assets/agent-architecture.webp">
+        <span class="zoom">Click to zoom</span>
+        <img src="assets/agent-architecture.webp" alt="RingMo-Agent architecture" loading="lazy">
+      </div>
+      <figcaption><span class="lbl">Figure 3 &mdash; Architecture.</span> Each modality enters through <span class="key">its own embedding layer</span>, so optical, SAR and infrared imagery stay separate before meeting in the shared backbone. On a spatial navigation task the model <span class="key">calls an external visual grounding tool</span> for the target's position, then decodes a continuous route from it &mdash; the tool is part of solving the task, not a lookup bolted on the side.</figcaption>
     </figure>
 
     <figure class="rv" style="margin-bottom:0">
@@ -450,17 +506,17 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
   </div>
 </section>
 
-<!-- ================= RINGMO-CLAW ================= -->
+<!-- ================= RINGMOCLAW ================= -->
 <section id="claw">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker c">Paper 02</span>
-      <h2>RingMo-Claw</h2>
-      <p class="sec-sub">An experience-inspired multi-agent framework for self-evolving research in remote sensing.</p>
+      <h2>RingMoClaw</h2>
+      <p class="sec-sub">Learning to reflect, and to grow.</p>
     </div>
 
     <div class="paper rv">
-      <p class="ptitle">RingMo-Claw: An Experience-Inspired Multi-Agent Framework for Self-Evolving Research in Remote Sensing</p>
+      <p class="ptitle">RingMoClaw: An Experience-Inspired Multi-Agent Framework for Self-Evolving Research in Remote Sensing</p>
       <p class="authors">
         Kaiyue Kang, Qixuan He, Peijin Wang, Yingchao Feng, Chao Ren, Kangxin Wang,
         Wenhui Diao, Yixiao Wang, Liangjin Zhao, Kaiwen Wei, Nayu Liu, Xian Sun
@@ -468,18 +524,24 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
       <p class="affil">Aerospace Information Research Institute, Chinese Academy of Sciences</p>
     </div>
 
+    <p class="lead-p rv">A good analyst has one more skill: <b>learning from their own mistakes.</b> When a class of target keeps getting missed, the usual answer is an engineer re-examining the data, adjusting the training strategy, changing the model, and running it all again. RingMoClaw hands that cycle to the system itself.</p>
+
     <div class="abstract c rv">
       <span class="lead">Overview</span>
-      Ask for a remote sensing study in plain language, and RingMo-Claw carries it out. A team of agents divides the work &mdash; one plans, one prepares the data, one runs the experiments &mdash; and a reviewer checks the work at each stage before moving on. What matters is what happens afterwards: every attempt, successful or not, becomes experience the framework draws on next time. It does not start from scratch on the next task; it starts from what it learned on the last one.
+      Ask for a remote sensing study in plain language, and RingMoClaw carries it out. A team of agents divides the work &mdash; one reads the task and designs the approach, others handle the data and run the experiments &mdash; while a <b>separate critic</b> reviews the plan, checks the data and looks for the real performance bottleneck. Outside knowledge and past experiments both feed the optimisation. The point is not automating experiment runs; it is getting the system to answer a harder question on its own: <b>what should be improved next?</b>
     </div>
 
     <figure class="rv">
       <div class="figbox" data-src="assets/claw-framework.webp">
         <span class="zoom">Click to zoom</span>
-        <img src="assets/claw-framework.webp" alt="RingMo-Claw framework overview" loading="lazy">
+        <img src="assets/claw-framework.webp" alt="RingMoClaw framework overview" loading="lazy">
       </div>
-      <figcaption><span class="lbl">Figure 5 &mdash; Framework.</span> How the research loop fits together: the agents that carry out the study (left), <span class="key c">the experience they draw on</span> (centre), and the review that checks their work (right).</figcaption>
+      <figcaption><span class="lbl">Figure 5 &mdash; Framework.</span> Three branches forming one loop: the agents that carry out the study (left), <span class="key c">the experience they draw on</span> (centre), and the independent review that checks their work (right).</figcaption>
     </figure>
+
+    <p class="lead-p rv">On fine-grained object detection, the framework <b>picks its own direction</b> from whatever bottleneck the current round exposes &mdash; augmentation when the data is the limit, a loss or schedule change when training is, a new module when the architecture is. What improves is kept; what does not is recorded as a dead end and avoided later. The route is not a fixed recipe, it forms as the problems surface.</p>
+
+    <p class="pull c rv">A failed experiment stops being a failure. It becomes <i>the input to the next decision.</i></p>
 
     <div class="cards rv" style="margin-bottom:0">
       <div class="card c">
@@ -490,23 +552,23 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
       <div class="card c">
         <span class="num">02</span>
         <h3>It learns as it goes</h3>
-        <p>The framework draws on published remote sensing work and on its own past experiments, so each new run begins from accumulated experience rather than a blank page.</p>
+        <p>Two sources of experience: new ideas drawn from published work and open-source methods, and its own record of what has already succeeded, failed or stalled.</p>
       </div>
       <div class="card c">
         <span class="num">03</span>
         <h3>It checks itself</h3>
-        <p>A reviewer inspects the plan, the data and the results in turn. Weak ideas are caught before they consume compute, and failures are turned into guidance for the next attempt.</p>
+        <p>An independent critic inspects the plan, the data and the results in turn. Weak ideas are caught before they consume compute, and failures are turned into guidance for the next attempt.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= DEMO ================= -->
-<section id="demo">
+<section id="demo" class="tint">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker c">Demo</span>
-      <h2>RingMo-Claw in action</h2>
+      <h2>RingMoClaw in action</h2>
       <p class="sec-sub">A recorded run of the framework taking a research task from description to trained model.</p>
     </div>
     <div class="videobox rv">
@@ -519,7 +581,7 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 </section>
 
 <!-- ================= APPLICATIONS ================= -->
-<section id="applications" class="tint">
+<section id="applications">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker">Applications</span>
@@ -552,8 +614,18 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
   </div>
 </section>
 
+<!-- ================= CLOSING ================= -->
+<div class="closing">
+  <div class="wrap">
+    <span class="kicker rv">Together</span>
+    <h2 class="rv">Two works, one analyst</h2>
+    <p class="rv">If RingMo-Agent gives remote sensing AI the ability to <b>complete a task</b>, RingMoClaw gives it the ability to <b>get better at completing tasks</b>. What comes next may not be a foundation model with ever more parameters, but something closer to an analyst that stays on the job &mdash; one you can work with, check, and watch improve.</p>
+    <p class="punch rv">We used to hand the model an image. Before long, we may only need to hand the agent <em>a task</em>.</p>
+  </div>
+</div>
+
 <!-- ================= PAPERS ================= -->
-<section id="papers">
+<section id="papers" class="tint">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker">Resources</span>
@@ -573,6 +645,7 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
                Ling, Tong and others},
   journal   = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
   year      = {2026},
+  doi       = {10.1109/TPAMI.2026.3718699},
   publisher = {IEEE}
 }</pre>
         <button class="copy" data-target="bib1">Copy</button>
@@ -580,16 +653,16 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
     </details>
 
     <details class="bib rv">
-      <summary><span>RingMo-Claw &mdash; BibTeX</span><span class="chev">&#9654;</span></summary>
+      <summary><span>RingMoClaw &mdash; BibTeX</span><span class="chev">&#9654;</span></summary>
       <div class="body">
-        <pre id="bib2">@article{kang2025ringmoclaw,
-  title   = {RingMo-Claw: An Experience-Inspired Multi-Agent Framework
+        <pre id="bib2">@article{kang2026ringmoclaw,
+  title   = {RingMoClaw: An Experience-Inspired Multi-Agent Framework
              for Self-Evolving Research in Remote Sensing},
   author  = {Kang, Kaiyue and He, Qixuan and Wang, Peijin and
              Feng, Yingchao and Ren, Chao and Wang, Kangxin and
              Diao, Wenhui and Wang, Yixiao and Zhao, Liangjin and
              Wei, Kaiwen and Liu, Nayu and Sun, Xian},
-  year    = {2025}
+  year    = {2026}
 }</pre>
         <button class="copy" data-target="bib2">Copy</button>
       </div>
@@ -599,11 +672,12 @@ footer{background:#061626;color:rgba(255,255,255,.6);padding:48px 0 56px}
 
 <footer>
   <div class="wrap foot">
-    <p><b>The RingMo series</b> &mdash; remote sensing foundation models and agents.<br>
+    <p><b>Intelligent Remote Sensing Analyst</b> &mdash; the RingMo series.<br>
        Aerospace Information Research Institute, Chinese Academy of Sciences.</p>
     <p>Figures are taken from the corresponding papers.</p>
   </div>
 </footer>
+
 
 <div class="lb" id="lb"><button class="close" id="lbclose" aria-label="Close">&times;</button><img id="lbimg" alt=""></div>
 
